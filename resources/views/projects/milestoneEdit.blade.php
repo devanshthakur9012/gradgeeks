@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 d-none">
                 <label for="milestone-title"
                     class="col-form-label">{{ __('Milestone Cost') }}</label><x-required></x-required>
                 <div class="form-icon-user">

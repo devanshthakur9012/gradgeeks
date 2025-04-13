@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('page-title')
-    {{ __('Clients') }}
+    {{ __('Faculty') }}
 @endsection
 
 @section('links')
@@ -10,7 +10,7 @@
     @else
         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
     @endif
-    <li class="breadcrumb-item"> {{ __('Clients') }}</li>
+    <li class="breadcrumb-item"> {{ __('Faculty') }}</li>
 @endsection
 
 @php
@@ -136,13 +136,13 @@
                 @if (isset($currentWorkspace) && $currentWorkspace->creater->id == Auth::id())
                     <div class="col-xl-3 col-lg-4 col-sm-6">
                         <a href="#" class="btn-addnew-project border-primary p-4" data-ajax-popup="true" data-size="lg"
-                            data-title="{{ __('Create Client') }}"
+                            data-title="{{ __('Create Faculty') }}"
                             data-url="{{ route('clients.create', $currentWorkspace->slug) }}">
                             <div class="bg-primary proj-add-icon" data-toggle="tooltip" title="{{ __('Create') }}">
                                 <i class="ti ti-plus my-2"></i>
                             </div>
-                            <h6 class="mt-4 mb-2">{{ __('New Client') }}</h6>
-                            <p class="text-muted text-center">{{ __('Click here to Create New Client') }}</p>
+                            <h6 class="mt-4 mb-2">{{ __('New Faculty') }}</h6>
+                            <p class="text-muted text-center">{{ __('Click here to Create New Faculty') }}</p>
                         </a>
                     </div>
                 @endif

@@ -32,17 +32,34 @@
 @endphp
 
 @section('action-button')
+
+    @if (
+        (isset($permissions) && in_array('show task', $permissions)) ||
+            (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
+        <a href="{{ route($client_keyword . 'projects.task.board', [$currentWorkspace->slug, $project->id]) }}"
+            data-toggle="tooltip" title="{{ __('Task Board') }}" class="btn btn-sm btn-primary">
+            Task Board <i class="ti ti-layout-kanban"></i></a>
+    @endif
+
+    @if (
+        (isset($permissions) && in_array('show bug report', $permissions)) ||
+            (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
+        <a href="{{ route($client_keyword . 'projects.bug.report', [$currentWorkspace->slug, $project->id]) }}"
+            data-toggle="tooltip" title="{{ __('Bug Report') }}" class="btn btn-sm btn-primary">
+            Bug Report <i class="ti ti-bug"></i></a>
+    @endif
+
     @if (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner')
         <a href="#" class="btn btn-sm btn-primary" data-toggle="tooltip" title="{{ __('Shared Project Settings') }}"
             data-ajax-popup="true" data-size="md" data-title="{{ __('Shared Project Settings') }}"
             data-url="{{ route('projects.copylink.setting.create', [$currentWorkspace->slug, $project->id]) }}">
-            <i class="ti ti-settings"></i>
+            Shared Project <i class="ti ti-settings"></i>
         </a>
     @endif
 
     {{-- <a href="#" class="btn btn-sm btn-primary cp_link "
         data-link="{{ route('projects.link', [$currentWorkspace->slug, \Illuminate\Support\Facades\Crypt::encrypt($project->id)]) }}"
-        data-toggle="tooltip" title="Copy Project"><span class=""></span><span class="btn-inner--text text-white"><i
+        data-toggle="tooltip" title="Copy Project"><span class=""></span><span class="btn-inner--text text-white">Copy Project <i
                 class="ti ti-copy"></i></span></a>
     </a> --}}
 
@@ -51,7 +68,7 @@
             (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
         <a href="{{ route($client_keyword . 'projects.timesheet.index', [$currentWorkspace->slug, $project->id]) }}"
             data-toggle="tooltip" title="{{ __('TimeSheet') }}" class="btn btn-sm btn-primary">
-            <i class="ti ti-alarm"></i></a>
+            TimeSheet <i class="ti ti-alarm"></i></a>
     @endif
 
     @if (
@@ -59,23 +76,7 @@
             (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
         <a href="{{ route($client_keyword . 'projects.gantt', [$currentWorkspace->slug, $project->id]) }}"
             data-toggle="tooltip" title="{{ __('Gantt Chart') }}" class="btn btn-sm btn-primary">
-            <i class="ti ti-chart-bar"></i></a>
-    @endif
-
-    @if (
-        (isset($permissions) && in_array('show task', $permissions)) ||
-            (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
-        <a href="{{ route($client_keyword . 'projects.task.board', [$currentWorkspace->slug, $project->id]) }}"
-            data-toggle="tooltip" title="{{ __('Task Board') }}" class="btn btn-sm btn-primary">
-            <i class="ti ti-layout-kanban"></i></a>
-    @endif
-
-    @if (
-        (isset($permissions) && in_array('show bug report', $permissions)) ||
-            (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
-        <a href="{{ route($client_keyword . 'projects.bug.report', [$currentWorkspace->slug, $project->id]) }}"
-            data-toggle="tooltip" title="{{ __('Bug Report') }}" class="btn btn-sm btn-primary">
-            <i class="ti ti-bug"></i></a>
+            Gantt Chart <i class="ti ti-chart-bar"></i></a>
     @endif
 
     @if (
@@ -83,12 +84,12 @@
             (isset($currentWorkspace) && $currentWorkspace->permission == 'Owner'))
         <a href="{{ route($client_keyword . 'projects.expense.report', [$currentWorkspace->slug, $project->id]) }}"
             data-toggle="tooltip" title="{{ __('Expenses') }}" class="btn btn-sm btn-primary">
-            <i class="ti ti-file-text"></i></a>
+            Expenses <i class="ti ti-file-text"></i></a>
     @endif
 
     <a href="{{ route($client_keyword . 'projecttime.tracker', [$currentWorkspace->slug, $project->id]) }}"
         data-toggle="tooltip" title="{{ __('Tracker') }}" class="btn btn-sm btn-primary">
-        <i class="ti ti-device-watch"></i></a>
+        Tracker <i class="ti ti-device-watch"></i></a>
 @endsection
 
 @push('css-page')
@@ -221,9 +222,9 @@
                                             <i class="fas fa-money-bill-alt"></i>
                                         </div>
                                         <div class="text-end project-card-content">
-                                            <h6 class="text-muted mb-1">{{ __('Budget') }}</h6>
+                                            <h6 class="text-muted mb-1">{{ __('Members') }}</h6>
                                             <span
-                                                class="h6 font-weight-bold mb-0 ">{{ !empty($currentWorkspace->currency) ? $currentWorkspace->currency : '$' }}{{ number_format($project->budget) }}</span>
+                                                class="h6 font-weight-bold mb-0 ">{{ count($project->users) }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -344,7 +345,7 @@
                                 <div class="card-header">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <h5 class="mb-0">{{ __('Clients') }} ({{ count($project->clients) }})</h5>
+                                            <h5 class="mb-0">{{ __('Faculty') }} ({{ count($project->clients) }})</h5>
                                         </div>
                                         <div class="float-end">
                                             <p class="text-muted d-none d-sm-flex align-items-center mb-0">
@@ -508,8 +509,8 @@
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h5 class="mb-0">{{ __('Milestones') }} ({{ count($project->milestones) }})
-                                        </h5>
+                                        <h5 class="mb-0">{{ __('Milestones') }} ({{ count($project->milestones) }})</h5>
+                                        <p>{{ __('To create milestones, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</p>
                                     </div>
                                     <div class="float-end">
                                         @if ((isset($permissions) && in_array('create milestone', $permissions)) || $currentWorkspace->permission == 'Owner')
@@ -517,7 +518,7 @@
                                                 data-title="{{ __('Create Milestone') }}"
                                                 data-url="{{ route($client_keyword . 'projects.milestone', [$currentWorkspace->slug, $project->id]) }}"
                                                 data-bs-toggle="tooltip" title="{{ __('Create') }}">
-                                                <i class="ti ti-plus"></i></a>
+                                                Create <i class="ti ti-plus"></i></a>
                                         @endif
                                     </div>
                                 </div>
@@ -531,7 +532,7 @@
                                                 <th>{{ __('Status') }}</th>
                                                 <th>{{ __('Start Date') }}</th>
                                                 <th>{{ __('End Date') }}</th>
-                                                <th>{{ __('Cost') }}</th>
+                                                <!-- <th>{{ __('Cost') }}</th> -->
                                                 <th>{{ __('Progress') }}</th>
                                                 <th>{{ __('Action') }}</th>
                                             </tr>
@@ -556,8 +557,8 @@
                                                     </td>
                                                     <td>{{ $milestone->start_date ?? '-' }}</td>
                                                     <td>{{ $milestone->end_date ?? '-' }}</td>
-                                                    <td>{{ !empty($currentWorkspace->currency) ? $currentWorkspace->currency : '$' }}{{ $milestone->cost }}
-                                                    </td>
+                                                    <!-- <td>{{ !empty($currentWorkspace->currency) ? $currentWorkspace->currency : '$' }}{{ $milestone->cost }}
+                                                    </td> -->
                                                     <td>
                                                         <div class="progress_wrapper">
                                                             <div class="progress">

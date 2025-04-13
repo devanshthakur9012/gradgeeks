@@ -3,9 +3,9 @@
     @csrf
     <div class="modal-body">
         <div class=" col-md-12 mb-0">
-            <label for="users_list" class="col-form-label">{{ __('Clients') }}</label><x-required></x-required>
+            <label for="users_list" class="col-form-label">{{ __('Faculty') }}</label><x-required></x-required>
             <select class="multi-select" id="clients" data-toggle="select2" required name="clients[]" multiple="multiple"
-                data-placeholder="{{ __('Select Clients ...') }}">
+                data-placeholder="{{ __('Select Faculty ...') }}">
                 @foreach ($currentWorkspace->clients as $client)
                     @if ($client->pivot->is_active)
                         @php

@@ -15,6 +15,7 @@ class Task extends Model
         'assign_to',
         'project_id',
         'milestone_id',
+        'type',
         'status',
         'order',
     ];

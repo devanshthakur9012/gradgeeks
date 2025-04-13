@@ -39,6 +39,13 @@
 
 @section('content')
     <div class="row row-gap-2 mb-4">
+        <div class="row">
+            <ul>
+                <li>{{ __('To create tasks or subtasks, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</li>
+                <li>{{ __('To create bugs, go to Projects → Select a Project → Tap the "Bug Report" icon.') }}</li>
+            </ul>
+        </div>
+
         @if ($projects && $currentWorkspace)
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-12 d-flex align-items-center justify-content-end">
@@ -113,10 +120,10 @@
                                                                 <i class="ti ti-pencil"></i> <span>{{ __('Edit') }}</span>
                                                             </a>
                                                             <a href="#" class="dropdown-item" data-ajax-popup="true"
-                                                                data-size="md" data-title="{{ __('Share to Clients') }}"
+                                                                data-size="md" data-title="{{ __('Share to Faculty') }}"
                                                                 data-url="{{ route('projects.share.popup', [$currentWorkspace->slug, $project->id]) }}">
                                                                 <i class="ti ti-share"></i>
-                                                                <span>{{ __('Share to Clients') }}</span>
+                                                                <span>{{ __('Share to Faculty') }}</span>
                                                             </a>
                                                             <a href="#" class="dropdown-item" data-ajax-popup="true"
                                                                 data-size="md" data-title="{{ __('Duplicate Project') }}"
@@ -179,7 +186,7 @@
                                             <p class="mb-0"><b>{{ __('Due Date:') }}</b> {{ $project->end_date }}</p>
                                         </div>
                                     </div>
-                                    <p class="text-muted text-sm mt-3">{{ $project->description }}</p>
+                                    <p class="text-muted text-sm mt-3">{{ \Illuminate\Support\Str::limit($project->description, 100, '...') }}</p>
                                     <h6 class="text-muted">{{ __('MEMBERS') }}</h6>
                                     <div class="user-group mx-2">
                                         @foreach ($project->users as $user)

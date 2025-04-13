@@ -615,7 +615,7 @@ class UserController extends Controller
 
 
         if ($countClient > 0 && $countClient != 0) {
-            return redirect()->back()->with('error', __('Please Delete All Clients of this company.'));
+            return redirect()->back()->with('error', __('Please Delete All Faculty of this company.'));
         }
 
         if ($countMembers > 0 && $countMembers != 0) {

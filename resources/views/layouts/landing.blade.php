@@ -480,7 +480,7 @@
                   <li>
                     <span class="theme-avtar">
                       <i class="text-primary ti ti-circle-plus"></i></span>
-                    {{ ($plan->max_clients < 0)?__('Unlimited'):$plan->max_clients }} {{__('Clients Per Workspace')}}
+                    {{ ($plan->max_clients < 0)?__('Unlimited'):$plan->max_clients }} {{__('Faculty Per Workspace')}}
                   </li>
                   <li>
                     <span class="theme-avtar">

@@ -501,7 +501,7 @@
                                             <input class="form-check-input input-primary" type="checkbox" id="customCheckc1"
                                                 {{ $value->max_clients != 0 ? 'checked' : "" }}>
                                             <label class="form-check-label" for="customCheckc1">{{ $value->max_clients }}
-                                                Clients Per Workspace</label>
+                                            Faculty Per Workspace</label>
                                         </div>
                                     </li>
                                     <li>

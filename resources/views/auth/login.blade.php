@@ -118,7 +118,7 @@
                 <div class="d-grid mt-3">
                     <button type="button" id="" class="btn btn-primary btn-block  ">
                         <a href="{{ route('client.login', $lang) }}" class="" style="color:#fff">
-                            {{ __('Client Login') }}</a>
+                            {{ __('Faculty Login') }}</a>
                     </button>
                 </div>
             </div>

@@ -48,7 +48,7 @@
         @section('content')
             <div class="card-body">
                 <div class="">
-                    <h2 class="mb-3 f-w-600">{{ __('Client Login') }}</h2>
+                    <h2 class="mb-3 f-w-600">{{ __('Faculty Login') }}</h2>
                 </div>
                 @if (session()->has('error'))
                     <div>
@@ -121,7 +121,7 @@
                 </form>
                 <div class="d-grid col-12 mt-3">
                     <button type="button" id="" class="btn btn-primary btn-block mt-2">
-                        <a href="{{ route('login', $lang) }}" style="color:#fff">{{ __('User Login') }}</a>
+                        <a href="{{ route('login', $lang) }}" style="color:#fff">{{ __('Student Login') }}</a>
                     </button>
                 </div>
                 {{-- <div class="col-xl-6 img-card-side">

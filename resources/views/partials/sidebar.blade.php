@@ -81,7 +81,7 @@
                             class="dash-item {{ Request::route()->getName() == 'users.index' || Request::route()->getName() == 'users_logs.index' ? ' active' : '' }}">
                             <a href="{{ route('users.index', $currentWorkspace->slug) }}" class="dash-link ">
                                 <span class="dash-micon"> <i data-feather="user"></i></span>
-                                <span class="dash-mtext">{{ __('Users') }}</span>
+                                <span class="dash-mtext">{{ __('Team') }}</span>
                             </a>
                         </li>
 
@@ -90,7 +90,7 @@
                                 <a href="{{ route('clients.index', $currentWorkspace->slug) }}"
                                     class="dash-link {{ Request::route()->getName() == 'clients.index' ? ' active' : '' }}">
                                     <span class="dash-micon"><i class="ti ti-brand-python"></i></span>
-                                    <span class="dash-mtext"> {{ __('Clients') }}</span>
+                                    <span class="dash-mtext"> {{ __('Faculty') }}</span>
                                 </a>
                             </li>
                         @endif
@@ -126,7 +126,7 @@
                             </li>
                         @endif
 
-                        @if ($currentWorkspace->creater->id == Auth::user()->id)
+                        <!-- @if ($currentWorkspace->creater->id == Auth::user()->id)
                             <li
                                 class="dash-item {{ Request::route()->getName() == 'invoices.index' || Request::segment(2) == 'invoices' ? ' active' : '' }}">
                                 <a href="{{ route('invoices.index', $currentWorkspace->slug) }}" class="dash-link">
@@ -134,9 +134,9 @@
                                     <span class="dash-mtext">{{ __('Invoices') }} </span>
                                 </a>
                             </li>
-                        @endif
+                        @endif -->
 
-                        @if (isset($currentWorkspace) && $currentWorkspace && $currentWorkspace->creater->id == Auth::user()->id)
+                        <!-- @if (isset($currentWorkspace) && $currentWorkspace && $currentWorkspace->creater->id == Auth::user()->id)
                             <li
                                 class="dash-item dash-hasmenu {{ Request::route()->getName() == 'contracts.index' || Request::route()->getName() == 'contracts.show' ? ' active' : '' }}">
                                 <a href="#" class="dash-link">
@@ -163,7 +163,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        @endif
+                        @endif -->
 
                         <li class="dash-item {{ Request::route()->getName() == 'calender.index' ? ' active' : '' }}">
                             <a href="{{ route('calender.google.calendar', $currentWorkspace->slug) }}" class="dash-link ">

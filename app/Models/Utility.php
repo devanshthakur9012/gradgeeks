@@ -567,7 +567,7 @@ class Utility
             "wasabi_storage_validation" => "",
             "meta_image" => '',
             "meta_keywords" => 'Taskly SaaS',
-            "meta_description" => 'Taskly is a tool where you can Manage projects, work with clients, and collaborate with team members. All in one place.',
+            "meta_description" => 'Taskly is a tool where you can Manage projects, work with Faculty, and collaborate with team members. All in one place.',
             'enable_cookie' => 'on',
             'necessary_cookies' => 'on',
             'cookie_logging' => 'on',

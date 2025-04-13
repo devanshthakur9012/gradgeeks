@@ -54,7 +54,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="col-form-label">{{ __('Duration') }}</label><x-required></x-required>
                     <div class='input-group form-group'>
                         <input type='text' class=" form-control form-control-light" id="duration" name="duration"
@@ -63,6 +63,15 @@
                         <input type="hidden" name="due_date">
                         <span class="input-group-text"><i class="feather icon-calendar"></i></span>
                     </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-form-label">{{ __('Task Type') }}</label><x-required></x-required>
+                    <select class="form-control form-control-light" name="type" id="task-type" required>
+                        <option selected disabled>Select Type</option>
+                        <option value="bussiness_analyst">{{ __('Bussiness Analyst') }}</option>
+                        <option value="developer">{{ __('Developer') }}</option>
+                        <option value="tester">{{ __('Tester') }}</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-12">
                     <label class="col-form-label">{{ __('Description') }}</label><x-required></x-required>

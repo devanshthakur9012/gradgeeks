@@ -675,10 +675,8 @@ class ProjectController extends Controller
         $objUser = Auth::user();
         $userProject = Project::find($projectID);
         UserProject::where('project_id', '=', $userProject->id)->where('user_id', '=', $objUser->id)->delete();
-
         return redirect()->route('projects.index', $slug)->with('success', __('Project Leave Successfully!'));
     }
-
 
     public function taskBoard($slug, $projectID)
     {
@@ -764,6 +762,7 @@ class ProjectController extends Controller
                 'start_date' => 'required',
                 'due_date' => 'required',
                 'description' => 'required',
+                'type' => 'required',
             ]
         );
         if ($validator->fails()) {
@@ -995,6 +994,7 @@ class ProjectController extends Controller
                 'assign_to' => 'required',
                 'start_date' => 'required',
                 'due_date' => 'required',
+                'type' => 'required'
             ]
         );
         $objUser = Auth::user();
@@ -2194,6 +2194,9 @@ class ProjectController extends Controller
                 $tasks->orderBy($sort[0], $sort[1]);
             }
         }
+        if ($request->type) {
+            $tasks->where('type', '=', $request->type);
+        }
         if ($request->priority) {
             $tasks->where('priority', '=', $request->priority);
         }
@@ -2233,6 +2236,9 @@ class ProjectController extends Controller
                     }
                 }
             }
+
+            $typeName = str_replace('_',' ',$task->type);
+            $tmp['type'] = '<span class="badge bg-secondary p-2 px-3 text-capitalize text-left">' . __($typeName) . '</span>';
 
             if ($task->complete == 1) {
                 $tmp['status'] = '<span class="status_badge badge bg-success p-2 px-3">' . __($task->stage) . '</span>';

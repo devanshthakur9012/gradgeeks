@@ -78,8 +78,6 @@
                 {{-- <input type="text" class="month-btn form-control-light form-select" id="duration1" name="duration" value="{{ __('Select Date Range') }}">
                 <input type="hidden" name="start_date1" id="start_date1">
                 <input type="hidden" name="due_date1" id="end_date1"> --}}
-
-
                 <div class='input-group'>
                     <input type='text' class=" form-control pc-daterangepicker-2" id="duration1" name="duration"
                         placeholder="Select date range" />
@@ -124,6 +122,7 @@
                                     @if ($currentWorkspace->permission == 'Owner' || Auth::user()->getGuard() == 'client')
                                         <th>{{ __('Assigned to') }}</th>
                                     @endif
+                                    <th>{{ __('Type') }}</th>
                                     <th>{{ __('Status') }}</th>
                                     <th>{{ __('Priority') }}</th>
                                     @if ($currentWorkspace->permission == 'Owner')

@@ -2703,7 +2703,7 @@ Npm version bump due to package not being fully updated.
 - Fixed bug where valid_classes option would cause exception when it removed internal prefixed classes like mce-item-.
 - Fixed bug where backspace would cause navigation in IE 8 on an inline element and after a caret formatting was applied.
 - Fixed so placeholder images produced by the media plugin gets selected when inserted/edited.
-- Fixed so it's possible to drag in images when the paste_data_images option is enabled. Might be useful for mail clients.
+- Fixed so it's possible to drag in images when the paste_data_images option is enabled. Might be useful for mail Faculty.
 - Fixed so images doesn't get a width/height applied if the image_dimensions option is set to false useful for responsive contents.
 - Fixed so it's possible to pass in an optional arguments object for the nodeChanged function to be passed to all nodechange event listeners.
 - Fixed bug where media plugin embed code didn't update correctly.

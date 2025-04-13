@@ -79,7 +79,7 @@
                         </a>
                     @endif
                     @if (isset($result->progress) && $result->client == 'on')
-                        <a href="#tabs-3" class="list-group-item list-group-item-action border-0">{{ __('Clients') }}
+                        <a href="#tabs-3" class="list-group-item list-group-item-action border-0">{{ __('Faculty') }}
                             <div class="float-end"><i class="ti ti-chevron-right"></i></div>
                         </a>
                     @endif
@@ -318,7 +318,7 @@
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h5 class="mb-0">{{ __('Clients') }} ({{ count($project->clients) }})</h5>
+                                        <h5 class="mb-0">{{ __('Faculty') }} ({{ count($project->clients) }})</h5>
                                     </div>
                                     {{-- <div class="float-end">
                                         <p class="text-muted d-none d-sm-flex align-items-center mb-0">
