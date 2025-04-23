@@ -22,7 +22,7 @@
 <html lang="en" dir="{{ $SITE_RTL == 'on' ? 'rtl' : '' }}">
 
 <head>
-    <title>{{ $adminSettings['app_name'] ? $adminSettings['app_name'] : 'Taskly' }}</title>
+    <title>{{ $adminSettings['app_name'] ? $adminSettings['app_name'] : 'SPIRA' }}</title>
     <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
@@ -69,6 +69,11 @@
     <link rel="stylesheet" href=" {{ asset('public/landing_page_assets/css/landing-page.css') }}" />
     <link rel="stylesheet" href=" {{ asset('public/landing_page_assets/css/custom.css') }}" />
 
+    <!-- NEW FONT STYLE SHEET START -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- END SHEET -->
     <style>
         :root {
             --color-customColor: <?=$color ?>;
@@ -77,6 +82,29 @@
         .big-logo {
             height: 60px;
             width: 150px;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .paraSet{
+            font-size:20px;
+        }
+        .headMainSize{
+            font-size:45px;
+        }
+        .mainCardDiv ul{
+            color:#000 !important;
+        }
+        .marquee-logo-bg{
+            background:#fff;
+            padding:10px;
+            border-radius:10px;
         }
     </style>
 
@@ -183,11 +211,8 @@
                 <div class="col-xxl-4 col-md-6">
                     <span class="badge py-2 px-3 bg-white text-dark rounded-pill fw-bold mb-3">
                         {{ $settings['home_offer_text'] }}</span>
-                    <h1 class="mb-3">
-                        {{-- <b class="fw-bold">{{ env('APP_NAME') }}</b> <br> --}}
-                        {{ $settings['home_heading'] }}
-                    </h1>
-                    <h6 class="mb-0">{{ $settings['home_description'] }}</h6>
+                    <h1 class="mb-3 headMainSize">{{ $settings['home_heading'] }}</h1>
+                    <p class="mb-0 paraSet">{{ $settings['home_description'] }}</p>
                     <div class="d-flex gap-3 mt-4 banner-btn">
                         @if ($settings['home_live_demo_link'])
                             <a href="{{ $settings['home_live_demo_link'] }}" class="btn btn-outline-dark">Live Demo
@@ -208,9 +233,10 @@
             </div>
         </div>
         <div class="container">
-            <div class="row g-0 gy-2 mt-4 align-items-center">
-                <div class="col-xxl-3">
-                    <p class="mb-0">Trusted by <b class="fw-bold">{{ $settings['home_trusted_by'] }}</b></p>
+            <div class="row g-0 gy-2 my-5 align-items-center">
+                <div class="col-xxl-12 text-center">
+                    <!-- <h5 class="mb-2">Trusted by</h5> -->
+                    <h1 class="mb-4 headMainSize">{{ $settings['home_trusted_by'] }}</h1>
                 </div>
                 {{-- <div class="col-xxl-9">
                         <div class="row gy-3 row-cols-9">
@@ -244,12 +270,31 @@
                             </div>
                         </div>
                     </div> --}}
-                @foreach (explode(',', $settings['home_logo']) as $k => $home_logo)
+                <!-- @foreach (explode(',', $settings['home_logo']) as $k => $home_logo)
                     <div class="col-auto mx-2">
                         <img src="{{ $logo . '/' . $home_logo }}" alt="" class="img-fluid"
                             style="width: 130px;">
                     </div>
-                @endforeach
+                @endforeach -->
+
+                <!-- MARQUEE  START --> 
+                <div class="marquee-container" style="overflow: hidden; white-space: nowrap;">
+                    <div class="marquee-content" style="display: inline-block; animation: marquee {{ count(explode(',', $settings['home_logo'])) * 3 }}s linear infinite;">
+                        @foreach (explode(',', $settings['home_logo']) as $k => $home_logo)
+                            <div class="col-auto mx-2 marquee-logo-bg" style="display: inline-block;">
+                                <img src="{{ $logo . '/' . $home_logo }}" alt="" class="img-fluid" style="width: 130px;">
+                            </div>
+                        @endforeach
+                        <!-- Repeat for seamless looping -->
+                        @foreach (explode(',', $settings['home_logo']) as $k => $home_logo)
+                            <div class="col-auto mx-2 marquee-logo-bg" style="display: inline-block;">
+                                <img src="{{ $logo . '/' . $home_logo }}" alt="" class="img-fluid" style="width: 130px;">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <!-- MARQUEE END  -->
+
             </div>
         </div>
     </section>
@@ -262,10 +307,10 @@
             <div class="row gy-3">
                 <div class="col-xxl-4">
                     <span class="d-block mb-2 text-uppercase">{{ $settings['feature_title'] }}</span>
-                    <div class="title mb-4">
-                        <h2><b class="fw-bold">{!! $settings['feature_heading'] !!}</b></h2>
+                    <div class="title mb-3">
+                        <h2 class="mb-0 headMainSize"><b class="fw-bold">{!! $settings['feature_heading'] !!}</b></h2>
                     </div>
-                    <p class="mb-3">{!! $settings['feature_description'] !!}</p>
+                    <p class="mb-3 paraSet">{!! $settings['feature_description'] !!}</p>
                     @if ($settings['feature_buy_now_link'])
                         <a href="{{ $settings['feature_buy_now_link'] }}"
                             class="btn btn-primary rounded-pill d-inline-flex align-items-center">Buy Now <i
@@ -278,14 +323,14 @@
                                 is_object(json_decode($settings['feature_of_features'], true)))
                             @foreach (json_decode($settings['feature_of_features'], true) as $key => $value)
                                 <div class="col-lg-4 col-sm-6 d-flex">
-                                    <div class="card {{ $key == 0 ? 'bg-primary' : '' }}">
+                                    <div class="card {{ $key == 0 ? 'bg-primary mainCardDiv' : '' }}">
                                         <div class="card-body">
                                             <span class="theme-avtar avtar avtar-xl mb-4">
                                                 <img src="{{ $logo . '/' . $value['feature_logo'] }}" alt="">
                                             </span>
                                             <h3 class="mb-3 {{ $key == 0 ? '' : 'text-white' }}">
                                                 {!! $value['feature_heading'] !!}</h3>
-                                            <p class=" f-w-600 mb-0 {{ $key == 0 ? 'text-body' : '' }}">
+                                            <p class="text-dark f-w-600 mb-0 {{ $key == 0 ? 'text-body' : '' }}">
                                                 {!! $value['feature_description'] !!}</p>
                                         </div>
                                     </div>
@@ -297,8 +342,8 @@
                 <div class="mt-5">
                     <div class="title text-center mb-4">
                         <span class="d-block mb-2 text-uppercase">{{ $settings['feature_title'] }}</span>
-                        <h2 class="mb-4">{!! $settings['highlight_feature_heading'] !!}</h2>
-                        <p>{!! $settings['highlight_feature_description'] !!}</p>
+                        <h2 class="mb-4 headMainSize">{!! $settings['highlight_feature_heading'] !!}</h2>
+                        <p class="paraSet">{!! $settings['highlight_feature_description'] !!}</p>
                     </div>
                     <div class="features-preview">
                         <img class="img-fluid m-auto d-block"
@@ -790,13 +835,13 @@
     </div>
     <div class="border-top border-dark text-center p-2">
         {{-- <p class="mb-0"> {{ __('Copyright') }} &copy;
-                {{ env('FOOTER_TEXT') ? env('FOOTER_TEXT') : config('app.name', 'Taskly') }}
+                {{ env('FOOTER_TEXT') ? env('FOOTER_TEXT') : config('app.name', 'SPIRA') }}
                 {{ date('Y') }}
-                {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'Taskly') }}
+                {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'SPIRA') }}
             </p> --}}
         <span class="">
             &copy; {{ date('Y') }}
-            {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'Taskly') }}
+            {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'SPIRA') }}
         </span>
     </div>
 </footer>

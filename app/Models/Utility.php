@@ -566,8 +566,8 @@ class Utility
             "wasabi_max_upload_size" => "",
             "wasabi_storage_validation" => "",
             "meta_image" => '',
-            "meta_keywords" => 'Taskly SaaS',
-            "meta_description" => 'Taskly is a tool where you can Manage projects, work with Faculty, and collaborate with team members. All in one place.',
+            "meta_keywords" => 'SPIRA SaaS',
+            "meta_description" => 'SPIRA is a tool where you can Manage projects, work with Faculty, and collaborate with team members. All in one place.',
             'enable_cookie' => 'on',
             'necessary_cookies' => 'on',
             'cookie_logging' => 'on',
@@ -598,11 +598,11 @@ class Utility
             'pusher_app_cluster' => '',
             'app_name' => '',
             'default_lang' => 'en',
-            'app_name' => 'Taskly',
+            'app_name' => 'SPIRA',
             'display_landing' => 'on',
             'site_rtl' => 'off',
             'signup_button' => 'on',
-            'footer_text' => 'Taskly',
+            'footer_text' => 'SPIRA',
             'email_verification' => 'off',
             'color_flag' => 'false',
         ];
@@ -1360,7 +1360,7 @@ class Utility
         }
 
         $setting = self::getAdminPaymentSettings();
-        $arrValue['app_name'] = $setting['app_name'] ? $setting['app_name'] : 'Taskly';
+        $arrValue['app_name'] = $setting['app_name'] ? $setting['app_name'] : 'SPIRA';
         // $arrValue['company_name'] = self::settings()['company_name'];
         $arrValue['app_url'] = '<a href="' . env('APP_URL') . '" target="_blank">' . env('APP_URL') . '</a>';
         return str_replace($arrVariable, array_values($arrValue), $content);

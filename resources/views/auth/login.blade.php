@@ -108,12 +108,12 @@
                                 class="btn btn-primary btn-block mt-2">{{ __('Login') }}</button>
                         </div>
 
-                        @if ($setting['signup_button'] == 'on')
+                        <!-- @if ($setting['signup_button'] == 'on')
                             <p class="my-4 text-center">{{ __("Don't have an account?") }}
                                 <a href="{{ route('register', $lang) }}" class="my-4 text-center text-primary">
                                     {{ __('Register') }} </a>
                             </p>
-                        @endif
+                        @endif -->
                 </form>
                 <div class="d-grid mt-3">
                     <button type="button" id="" class="btn btn-primary btn-block  ">

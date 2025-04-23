@@ -88,7 +88,7 @@ class PayUController extends Controller
                             ])
                         ]),
 
-                        'productinfo'       => 'WorkDo',
+                        'productinfo'       => 'SPIRA',
                         'service_provider'  => 'payu_paisa',
                     ];
                     $pay_id = $orderId . '777';

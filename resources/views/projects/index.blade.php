@@ -39,11 +39,9 @@
 
 @section('content')
     <div class="row row-gap-2 mb-4">
-        <div class="row">
-            <ul>
-                <li>{{ __('To create tasks or subtasks, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</li>
-                <li>{{ __('To create bugs, go to Projects → Select a Project → Tap the "Bug Report" icon.') }}</li>
-            </ul>
+        <div class="row col-lg-7">
+            <button class="btn btn-light text-white bg-primary text-start mb-2 py-1 px-2">{{ __('Note: To create tasks or subtasks, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</button><br />
+            <button class="btn btn-light text-white bg-primary text-start mb-2 py-1 px-2">{{ __('Note: To create bugs, go to Projects → Select a Project → Tap the "Bug Report" icon.') }}</button>
         </div>
 
         @if ($projects && $currentWorkspace)

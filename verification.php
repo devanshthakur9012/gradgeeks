@@ -1,6 +1,6 @@
 <?php
 
-// System : Taskly
+// System : SPIRA
 // System Version : 6.2
 
 function getPhpVersionInfo()

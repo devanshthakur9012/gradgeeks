@@ -29,6 +29,6 @@ class EmailTest extends Mailable
      */
     public function build()
     {  $setting = Utility::getAdminPaymentSettings();
-        return $this->markdown('email.test')->subject('Nice Subject - '.$setting['app_name'] ? $setting['app_name'] : 'Taskly');
+        return $this->markdown('email.test')->subject('Nice Subject - '.$setting['app_name'] ? $setting['app_name'] : 'SPIRA');
     }
 }

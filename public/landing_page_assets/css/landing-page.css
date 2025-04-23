@@ -264,6 +264,10 @@ a:focus, a:hover {
     margin-top: 8px;
 }
 
+.site-footer{
+    background-color: #6fd943;
+}
+
 .site-footer .footer-row {
     padding: 60px 0;
     display: flex;

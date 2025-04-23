@@ -509,8 +509,8 @@
                             <div class="card-header">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h5 class="mb-0">{{ __('Milestones') }} ({{ count($project->milestones) }})</h5>
-                                        <p>{{ __('To create milestones, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</p>
+                                        <h5 class="mb-2">{{ __('Milestones') }} ({{ count($project->milestones) }})</h5>
+                                        <button class="btn btn-light text-white bg-primary active text-start py-1 px-2">{{ __('Note: To create milestones, go to Projects → Select a Project → Tap the "Task Board" icon.') }}</button>
                                     </div>
                                     <div class="float-end">
                                         @if ((isset($permissions) && in_array('create milestone', $permissions)) || $currentWorkspace->permission == 'Owner')

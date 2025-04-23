@@ -25,7 +25,7 @@
 
 <head>
 
-    <title>Taskly</title>
+    <title>SPIRA</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="keywords" content="Dashboard Template" />
-    <meta name="author" content="WorkDo" />
+    <meta name="author" content="SPIRA" />
 
 
     <meta name="title" content="{{ $meta_setting['meta_keywords'] }}">
@@ -135,7 +135,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-5 mt-5 pt-5">
                     <h1 class="text-white mb-sm-4 wow animate__fadeInLeft" data-wow-delay="0.2s">
-                        Taskly
+                        SPIRA
                     </h1>
                     <h2 class="text-white mb-sm-4 wow animate__fadeInLeft" data-wow-delay="0.4s">
                         Project Management<br />Tool
@@ -209,7 +209,7 @@
             <div class="row align-items-center justify-content-end mb-5">
                 <div class="col-sm-4">
                     <h1 class="mb-sm-4 f-w-600 wow animate__fadeInLeft" data-wow-delay="0.2s">
-                        Taskly
+                        SPIRA
                     </h1>
                     <h2 class="mb-sm-4 wow animate__fadeInLeft" data-wow-delay="0.4s">
                         Project Management<br />Tool
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-sm-4">
                     <h1 class="mb-sm-4 f-w-600 wow animate__fadeInRight" data-wow-delay="0.2s">
-                        Taskly
+                        SPIRA
                     </h1>
                     <h2 class="mb-sm-4 wow animate__fadeInRight" data-wow-delay="0.4s">
                         Project Management<br />Tool
@@ -364,7 +364,7 @@
             <div class="row align-items-center justify-content-end mb-5">
                 <div class="col-sm-4">
                     <h1 class="mb-sm-4 f-w-600 wow animate__fadeInLeft" data-wow-delay="0.2s">
-                        Taskly
+                        SPIRA
                     </h1>
                     <h2 class="mb-sm-4 wow animate__fadeInLeft" data-wow-delay="0.4s">
                         Project Management<br />Tool
@@ -390,7 +390,7 @@
                 </div>
                 <div class="col-sm-4">
                     <h1 class="mb-sm-4 f-w-600 wow animate__fadeInRight" data-wow-delay="0.2s">
-                        Taskly
+                        SPIRA
                     </h1>
                     <h2 class="mb-sm-4 wow animate__fadeInRight" data-wow-delay="0.4s">
                         Project Management<br />Tool
@@ -620,7 +620,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">
                     <h1 class="mb-sm-4 f-w-600 wow animate__fadeInLeft" data-wow-delay="0.2s">
-                        Taskly
+                    SPIRA
                     </h1>
                     <h2 class="mb-sm-4 wow animate__fadeInLeft" data-wow-delay="0.4s">
                         Project Management<br />Tool

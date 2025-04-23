@@ -780,7 +780,7 @@ class User extends Authenticatable implements MustVerifyEmail
                         'lang' => $lang,
                         'subject' => $defaultTemplate[$e->name]['subject'],
                         'content' => $content,
-                        'from' => $setting['app_name'] ? $setting['app_name'] : 'Taskly',
+                        'from' => $setting['app_name'] ? $setting['app_name'] : 'SPIRA',
                     ]
                 );
             }

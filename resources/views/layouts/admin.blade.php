@@ -75,9 +75,9 @@
 
     <title>
         @if (trim($__env->yieldContent('page-title')) && Auth::user()->type == 'admin')
-            {{ config('app.name', 'Taskly') }} -@yield('page-title')
+            {{ config('app.name', 'SPIRA') }} -@yield('page-title')
         @else
-            {{ isset($currentWorkspace->company) && $currentWorkspace->company != '' ? $currentWorkspace->company : config('app.name', 'Taskly') }}
+            {{ isset($currentWorkspace->company) && $currentWorkspace->company != '' ? $currentWorkspace->company : config('app.name', 'SPIRA') }}
             -@yield('page-title')
         @endif
     </title>

@@ -6,7 +6,7 @@
         <div>
             <span class="text-muted" style="text-align: left;">
                 &copy; {{ date('Y') }}
-                {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'Taskly') }}
+                {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'SPIRA') }}
             </span>
         </div>
     </div>

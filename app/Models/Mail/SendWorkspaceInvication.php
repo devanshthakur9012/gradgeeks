@@ -35,6 +35,6 @@ class SendWorkspaceInvication extends Mailable
     public function build()
     {
         $setting = Utility::getAdminPaymentSettings();
-        return $this->markdown('email.workspace_invitation')->subject('New Workspace Invitation - '.  $setting['app_name'] ? $setting['app_name'] : 'Taskly');
+        return $this->markdown('email.workspace_invitation')->subject('New Workspace Invitation - '.  $setting['app_name'] ? $setting['app_name'] : 'SPIRA');
     }
 }

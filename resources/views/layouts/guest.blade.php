@@ -55,7 +55,7 @@
     <meta property="twitter:image" content="{{ asset($meta_images . $meta_setting['meta_image']) }}">
 
     <title>
-        {{ config('app.name', 'Taskly') }} - @yield('page-title')
+        {{ config('app.name', 'SPIRA') }} - @yield('page-title')
     </title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ $logo . 'favicon.png' . '?' . time() }}">
@@ -287,7 +287,7 @@
                                 {{-- <span class=""> {{ env('FOOTER_TEXT') }}</span> --}}
                                 <span>
                                     &copy; {{ date('Y') }}
-                                    {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'Taskly') }}
+                                    {{ Utility::getValByName('footer_text') ? Utility::getValByName('footer_text') : config('app.name', 'SPIRA') }}
                                 </span>
                             </div>
                         </div>

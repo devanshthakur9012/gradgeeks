@@ -34,6 +34,6 @@ class ShareProjectToClient extends Mailable
     public function build()
     {
         $setting = Utility::getAdminPaymentSettings();
-        return $this->markdown('email.share')->subject('New Project Share - '.  $setting['app_name'] ? $setting['app_name'] : 'Taskly');;
+        return $this->markdown('email.share')->subject('New Project Share - '.  $setting['app_name'] ? $setting['app_name'] : 'SPIRA');;
     }
 }

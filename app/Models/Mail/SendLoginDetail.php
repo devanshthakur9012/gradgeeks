@@ -31,6 +31,6 @@ class SendLoginDetail extends Mailable
     public function build()
     {
         $setting = Utility::getAdminPaymentSettings();
-        return $this->markdown('email.login.detail')->subject('Login details - ' . $setting['app_name'] ? $setting['app_name'] : 'Taskly');
+        return $this->markdown('email.login.detail')->subject('Login details - ' . $setting['app_name'] ? $setting['app_name'] : 'SPIRA');
     }
 }

@@ -57,6 +57,11 @@
 
 @section('content')
     <div class="row row-gap-2 mb-4">
+        <div class="row">
+            <div class="col-lg-7">
+                <button class="btn btn-light text-white bg-primary active text-start mb-2 py-1 px-2">{{ __('Note: Move your task to the next stage by dragging it to the correct status box.') }}</button>
+            </div>
+        </div>
         @if ($project && $currentWorkspace)
             <div class="row">
                 <div class="col-sm-12">
